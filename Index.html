@@ -51,20 +51,13 @@
 
     <div class="login-container">
         <h2>Login</h2>
-        <form onsubmit="redirectToCarsPage(event)">
+        <form onsubmit="event.preventDefault(); parent.navigateToPage('car-listings.html');">
             <input type="text" name="nome" placeholder="Nome Completo" required>
             <input type="email" name="email" placeholder="Email" required>
             <input type="tel" name="telefone" placeholder="Telefone" required>
             <button type="submit">Entrar</button>
         </form>
     </div>
-
-    <script>
-        function redirectToCarsPage(event) {
-            event.preventDefault();
-            window.location.href = 'car-listings.html'; // Redireciona para a página de listagem de carros
-        }
-    </script>
 
 </body>
 </html><!DOCTYPE html>
@@ -73,21 +66,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Car Listing</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .car-listings-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <header>
+
+    <div class="car-listings-container">
         <h1>Car Listings</h1>
-    </header>
-    <main>
-        <section id="car-listings">
-            <!-- Car cards will be displayed here -->
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 Car Listings</p>
-    </footer>
-    
-    <script src="script.js"></script>
+        <main>
+            <section id="car-listings">
+                <p>Exemplo de listagem de carros...</p>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Car Listings</p>
+        </footer>
+    </div>
+
 </body>
 </html>
