@@ -51,7 +51,7 @@
 
     <div class="login-container">
         <h2>Login</h2>
-        <form action="https://formspree.io/f/{seu-endereço}" method="POST">
+        <form onsubmit="redirectToCarsPage(event)">
             <input type="text" name="nome" placeholder="Nome Completo" required>
             <input type="email" name="email" placeholder="Email" required>
             <input type="tel" name="telefone" placeholder="Telefone" required>
@@ -59,9 +59,15 @@
         </form>
     </div>
 
+    <script>
+        function redirectToCarsPage(event) {
+            event.preventDefault();
+            window.location.href = 'car-listings.html'; // Redireciona para a página de listagem de carros
+        }
+    </script>
+
 </body>
-</html>
-<!DOCTYPE html>
+</html><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
