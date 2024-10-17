@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Site de Carros</title>
+    <title>Login e Listagem de Carros</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -15,7 +15,7 @@
             align-items: center;
             height: 100vh;
         }
-        .login-container {
+        .container {
             background-color: #fff;
             padding: 20px;
             border-radius: 10px;
@@ -23,8 +23,9 @@
             max-width: 400px;
             width: 100%;
         }
-        h2 {
+        h2, h1 {
             color: #2c3e50;
+            text-align: center;
         }
         input {
             width: 100%;
@@ -45,68 +46,27 @@
         button:hover {
             background-color: #2ecc71;
         }
-    </style>
-</head>
-<body>
-
-    <div class="login-container">
-        <h2>Login</h2>
-        <form onsubmit="event.preventDefault(); parent.navigateToPage('car-listings.html');">
-            <input type="text" name="nome" placeholder="Nome Completo" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="tel" name="telefone" placeholder="Telefone" required>
-            <button type="submit">Entrar</button>
-        </form>
-    </div>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Listing</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .car-listings-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            width: 100%;
-        }
-        h1 {
-            color: #2c3e50;
-        }
         footer {
             text-align: center;
             margin-top: 20px;
         }
+        iframe {
+            width: 100%;
+            height: 100vh;
+            border: none;
+        }
     </style>
 </head>
 <body>
 
-    <div class="car-listings-container">
-        <h1>Car Listings</h1>
-        <main>
-            <section id="car-listings">
-                <p>Exemplo de listagem de carros...</p>
-            </section>
-        </main>
-        <footer>
-            <p>&copy; 2024 Car Listings</p>
-        </footer>
-    </div>
+    <!-- Container principal que carrega a navegação entre as páginas -->
+    <iframe src="login.html" id="contentFrame"></iframe>
+
+    <script>
+        function navigateToPage(page) {
+            document.getElementById('contentFrame').src = page;
+        }
+    </script>
 
 </body>
 </html>
